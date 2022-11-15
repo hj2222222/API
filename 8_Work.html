@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fetchAPI() {
+        return fetch("https://jsonplaceholder.typicode.com/posts") // URL fetch 요청
+          .then((response) => response.json())
+          .then((data) => data);
+      }
+      fetchAPI().then((datas) => {
+        for (i = 0; i < datas.length; i++) {
+          document.getElementById("text").innerHTML +=
+            "id :" +
+            datas[i].id +
+            "<br>" +
+            " userId :" +
+            datas[i].userId +
+            "<br>" +
+            " title :" +
+            datas[i].title +
+            "<br>" +
+            " body :" +
+            datas[i].body +
+            "<br>";
+        }
+      });
+      //   function showDatas(datas, k) {
+      //     // fetchAPI().then((datas) => {
+      //     //   showDatas(datas, datas.length);
+      //     // });
+      //   }
+    </script>
+  </head>
+  <body>
+    <p id="text"></p>
+  </body>
+</html>
+
+<!-- //일반인증키 -->
+<!-- 4w1ktteM1H6Ah2wXNKawBlcnkUqCUr5%2BadFq5ghxvMKy0dSeW3armRN2QMzGBKXAf82NOZa8BJXqO9bym8eIuA%3D%3D -->
+<!-- //디코더 인증키 -->
+<!-- 4w1ktteM1H6Ah2wXNKawBlcnkUqCUr5+adFq5ghxvMKy0dSeW3armRN2QMzGBKXAf82NOZa8BJXqO9bym8eIuA== -->
+<!-- https://openapi.gg.go.kr/GGGOODCOMST -->
